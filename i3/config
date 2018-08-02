@@ -100,6 +100,7 @@ assign [class="Transmission-gtk"]               → $ws3
 assign [class="Mousepad"]                       → $ws4
 assign [class="Code"]                           → $ws4
 assign [class="Gvim"]                           → $ws4
+assign [class="Typora"]                         → $ws4
 assign [class="Gnome-font-viewer"]              → $ws5
 assign [class="Keepassx"]                       → $ws5
 assign [class="GParted"]                        → $ws5
@@ -179,13 +180,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # screenshot
-set $screenshot :Scrot | Screen (Print) | Select (s) | Upload (shift)
+set $screenshot :Scrot | Screen (Print) | Upload (shift)
 mode "$screenshot" {
-    bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.', mode "default"
-    bindsym s exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.', mode "default"
+    bindsym Print exec --no-startup-id ~/.local/share/scripts/scrots -a, mode "default"
 
     bindsym Shift+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots && ~/Documents/Scripts/Shell/scrot-upload $n', mode "default"
-    bindsym Shift+s exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots && ~/Documents/Scripts/Shell/scrot-upload $n', mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

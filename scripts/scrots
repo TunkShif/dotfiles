@@ -1,0 +1,39 @@
+#!/bin/bash
+
+CMD="$1"
+
+scrot_screen() {
+    scrot -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.'
+}
+
+scrot_selection() {
+    scrot -s -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.'
+}
+
+upscrot_screen() {
+    scrot -e 'mv $f ~/Pictures/Screenshots && ~/.local/share/scripts/upscrots $n'
+}
+
+upscrot_selection() {
+    scrot -s -e 'mv $f ~/Pictures/Screenshots && ~/.local/share/scripts/upscrots $n'
+}
+
+case "$CMD" in
+    -a)
+        scrot_screen
+        ;;
+    -s)
+        scrot_selection
+        ;;
+    -ua)
+        upscrot_screen
+        ;;
+    -us)
+        upscrot_selection
+        ;;
+    *)
+        echo "WRONG"
+        exit 1
+        ;;
+esac
+
