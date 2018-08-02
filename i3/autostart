@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Touchpad Settings
+xinput set-prop 13 270 1
+xinput set-prop 13 283 0, 1, 0
+
+# Connect Wifi
+nm-applet &
+
+# Compton
+compton &
+
+# Fcitx Input Method
+fcitx &

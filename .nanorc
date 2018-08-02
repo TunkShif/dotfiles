@@ -1,0 +1,24 @@
+# nanorc
+set autoindent
+set brackets ""')>]}"
+set linenumbers
+set matchbrackets "(<[{)>]}"
+set mouse
+set multibuffer
+set nowrap
+set smarthome
+set smooth
+set softwrap
+set tabsize 4
+set tabstospaces
+
+# color
+set titlecolor brightwhite,blue
+set statuscolor brightwhite,green
+set selectedcolor brightwhite,magenta
+set numbercolor cyan
+set keycolor cyan
+set functioncolor green
+
+include "/usr/share/nano/*.nanorc"
+

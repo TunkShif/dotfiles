@@ -1,0 +1,196 @@
+# i3 config file (v4)
+
+# AUTOSTART
+exec --no-startup-id sh ~/.config/i3/autostart
+# wallpaper
+exec --no-startup-id sh ~/.fehbg
+
+
+# KEYBINDING
+# set meta key as mod key
+set $mod Mod4
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+c kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# application
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# start thunar
+bindsym $mod+e exec --no-startup-id thunar
+
+
+# WORKSPACE
+# define workspaces
+set $ws1 "1:Home"
+set $ws2 "2:Files"
+set $ws3 "3:Web"
+set $ws4 "4:Code"
+set $ws5 "5:Settings"
+set $ws6 "6:Misc"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+# assign program to workspace
+assign [class="terminal"]                       → $ws1
+assign [class="Thunar"]                         → $ws2
+assign [class="Chromium"]                       → $ws3
+assign [class="Firefox"]                        → $ws3
+assign [class="Transmission-gtk"]               → $ws3
+assign [class="Mousepad"]                       → $ws4
+assign [class="Code"]                           → $ws4
+assign [class="Gvim"]                           → $ws4
+assign [class="Gnome-font-viewer"]              → $ws5
+assign [class="Keepassx"]                       → $ws5
+assign [class="GParted"]                        → $ws5
+assign [class="Grub-customizer"]                → $ws5
+assign [class="Lxappearance"]                   → $ws5
+assign [class="Lightdm-gtk-greeter-settings"]   → $ws5
+
+
+# STYLE
+# font
+font pango:Ubuntu Bold 9
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #5294E2 #5294E2 #FFFFFF #DDDDDD   #5294E2
+client.focused_inactive #2F343F #2F343F #86888C #292D2E   #5A5A5A
+client.unfocused        #2F343F #2F343F #86888C #292D2E   #5A5A5A
+client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
+client.placeholder      #2F343F #0C0C0C #FFFFFF #2F343F   #262626
+client.background       #2F343F
+
+# gaps
+smart_gaps on
+gaps inner 4
+gaps outer 2
+
+# i3bar
+bar {
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+        position top
+        workspace_buttons yes
+        strip_workspace_numbers yes
+
+        colors {
+        background  #2F343F
+        statusline  #DDDDDD
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #5294E2 #5294E2 #FFFFFF
+        active_workspace    #2F343F #2F343F #FFFFFF
+        inactive_workspace  #2F343F #2F343F #86888C
+        urgent_workspace    #D64E4E #D64E4E #FFFFFF
+        }
+
+}
+
+
+# CUSTOM
+# logout session
+set $Locker i3lock && sleep 1
+set $mode_system :Lock (l) | :Logout (e) | :Reboot (r) | :Shutdown (q)
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+
+# resize windows
+mode "resize" {
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# screenshot
+set $screenshot :Scrot | Screen (Print) | Select (s) | Upload (shift)
+mode "$screenshot" {
+    bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.', mode "default"
+    bindsym s exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots && notify-send $n saved.', mode "default"
+
+    bindsym Shift+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots && ~/Documents/Scripts/Shell/scrot-upload $n', mode "default"
+    bindsym Shift+s exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots && ~/Documents/Scripts/Shell/scrot-upload $n', mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Print mode "$screenshot"
+
