@@ -5,6 +5,7 @@ xinput set-prop 13 270 1
 xinput set-prop 13 283 0, 1, 0
 
 # Connect Wifi
+#sudo netctl start TP-LINK_98B3
 nm-applet &
 
 # Compton

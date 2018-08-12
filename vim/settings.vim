@@ -9,11 +9,9 @@ set laststatus=2
 set autoindent
 set smarttab
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 
 set nowrap
-set linebreak
-set showbreak=->
 
 " search
 set ignorecase

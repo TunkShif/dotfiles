@@ -91,6 +91,15 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 
+# specify windows to use floating mode
+for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
+for_window [class="Lxappearance"]                   floating enable
+for_window [class="Menu"]                           floating enable
+for_window [class="feh"]                            floating enable
+for_window [class="File-roller"]                    floating enable
+for_window [class="Anki"]                           floating enable
+for_window [class="shadowsocks-qt5"]                floating enable
+
 # assign program to workspace
 assign [class="terminal"]                       → $ws1
 assign [class="Thunar"]                         → $ws2
@@ -107,6 +116,7 @@ assign [class="GParted"]                        → $ws5
 assign [class="Grub-customizer"]                → $ws5
 assign [class="Lxappearance"]                   → $ws5
 assign [class="Lightdm-gtk-greeter-settings"]   → $ws5
+assign [class="shadowsocks-qt5"]                → $ws5
 
 
 # STYLE
