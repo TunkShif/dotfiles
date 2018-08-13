@@ -12,6 +12,7 @@ Plug 'Yggdroot/indentLine'
 " utils
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'ervandew/supertab'
 Plug 'maralla/completor.vim'
 
@@ -37,6 +38,10 @@ nnoremap <Leader>pc :PlugClean<CR>
 nnoremap <Leader>pu :PlugUpdate<CR>
 
 " nerdtree
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "●"
+    \ }
+
 nnoremap <C-f> :NERDTreeToggle<CR>
 
 " markdown
