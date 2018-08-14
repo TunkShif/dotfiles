@@ -8,6 +8,8 @@ alias del="gio trash"
 alias tree="gio tree"
 alias chx="chmod +x"
 alias open="exo-open"
+alias empty-trash="gio trash --empty"
+alias cot="pygmentize"
 
 # terminal
 alias q="exit"
@@ -27,6 +29,9 @@ alias adr="aria2c --conf-path=/home/tunkshif/.aria2/aria2-rpc.conf"
 # local applications
 alias bdp="/home/tunkshif/.local/share/baidupcs-go/BaiduPCS-Go"
 alias chromium-proxy='chromium --proxy-server="socks5://127.0.0.1:1080" &'
+
+# utils
+alias weather="curl http://wttr.in/Dazhu"
 
 # pacman & yaourt
 alias xu="sudo pacman -Syu"

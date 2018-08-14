@@ -99,6 +99,7 @@ for_window [class="feh"]                            floating enable
 for_window [class="File-roller"]                    floating enable
 for_window [class="Anki"]                           floating enable
 for_window [class="shadowsocks-qt5"]                floating enable
+for_window [class="Mousepad"]                       floating enable
 
 # assign program to workspace
 assign [class="terminal"]                       → $ws1
@@ -106,7 +107,6 @@ assign [class="Thunar"]                         → $ws2
 assign [class="Chromium"]                       → $ws3
 assign [class="Firefox"]                        → $ws3
 assign [class="Transmission-gtk"]               → $ws3
-assign [class="Mousepad"]                       → $ws4
 assign [class="Code"]                           → $ws4
 assign [class="Gvim"]                           → $ws4
 assign [class="Typora"]                         → $ws4
