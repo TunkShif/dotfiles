@@ -7,7 +7,6 @@ ZSH_THEME="lambda-mod"
 plugins=(
   git
   pip
-  pm
   thefuck
   utils
 )

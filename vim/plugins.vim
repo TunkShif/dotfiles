@@ -19,8 +19,7 @@ Plug 'honza/vim-snippets'
 Plug 'maralla/completor.vim'
 
 " markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 
 " rust
@@ -47,7 +46,7 @@ let g:NERDTreeIndicatorMapCustom = {
 nnoremap <C-f> :NERDTreeToggle<CR>
 
 " markdown
-let g:vim_markdown_folding_disabled = 1
+let g:markdown_enable_spell_checking = 0
 nmap <silent> <F8> <Plug>MarkdownPreview
 imap <silent> <F8> <Plug>MarkdownPreview
 

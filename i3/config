@@ -100,6 +100,7 @@ for_window [class="File-roller"]                    floating enable
 for_window [class="Anki"]                           floating enable
 for_window [class="shadowsocks-qt5"]                floating enable
 for_window [class="Mousepad"]                       floating enable
+for_window [class="Gloobus-preview"]                floating enable
 
 # assign program to workspace
 assign [class="terminal"]                       → $ws1
@@ -111,13 +112,13 @@ assign [class="Code"]                           → $ws4
 assign [class="Gvim"]                           → $ws4
 assign [class="Typora"]                         → $ws4
 assign [class="Gnome-font-viewer"]              → $ws5
-assign [class="Keepassx"]                       → $ws5
+assign [class="keepassxc"]                      → $ws5
 assign [class="GParted"]                        → $ws5
 assign [class="Grub-customizer"]                → $ws5
 assign [class="Lxappearance"]                   → $ws5
 assign [class="Lightdm-gtk-greeter-settings"]   → $ws5
 assign [class="shadowsocks-qt5"]                → $ws5
-
+assign [class="Midori"]                         → $ws3
 
 # STYLE
 # font
