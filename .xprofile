@@ -1,0 +1,8 @@
+export PATH=$PATH:$HOME/.local/share/bin
+export GOPATH=/home/tunkshif/.local/share/go
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx

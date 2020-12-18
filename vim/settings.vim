@@ -2,8 +2,8 @@
 set ruler
 set number
 set cursorline
-set cursorcolumn
 set laststatus=2
+set termguicolors
 
 " edit
 set autoindent

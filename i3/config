@@ -1,44 +1,50 @@
 # i3 config file (v4)
 
 # AUTOSTART
-exec --no-startup-id sh ~/.config/i3/autostart
-# wallpaper
-exec --no-startup-id sh ~/.fehbg
-
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id picom
+exec --no-startup-id fcitx
+exec --no-startup-id ~/.fehbg
 
 # KEYBINDING
 # set meta key as mod key
 set $mod Mod4
-floating_modifier $mod
 
-# kill focused window
+# bind actions for managing windows
+floating_modifier $mod
 bindsym $mod+c kill
+bindsym $mod+f fullscreen toggle
 
 # change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# move focused window via arrow key
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# split windows
+bindsym $mod+Alt+h split h
+bindsym $mod+Alt+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+Shift+e layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -49,82 +55,101 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
+# focus the child container
+#bindsym $mod+d focus child
 
-# restart i3
-bindsym $mod+Shift+r restart
-
-# application
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
-# start rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
-
-# start thunar
-bindsym $mod+e exec --no-startup-id thunar
-
-
-# WORKSPACE
-# define workspaces
-set $ws1 "1:Home"
-set $ws2 "2:Files"
-set $ws3 "3:Web"
-set $ws4 "4:Code"
-set $ws5 "5:Settings"
-set $ws6 "6:Misc"
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: Home"
+set $ws2 "2: Web"
+set $ws3 "3: Code"
+set $ws4 "4: Edit"
+set $ws5 "5: Settings"
+set $ws6 "6: Misc"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
 
 # specify windows to use floating mode
+# for_window [class=""]                             floating enable
 for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
 for_window [class="Lxappearance"]                   floating enable
 for_window [class="Menu"]                           floating enable
 for_window [class="feh"]                            floating enable
-for_window [class="File-roller"]                    floating enable
 for_window [class="Anki"]                           floating enable
-for_window [class="shadowsocks-qt5"]                floating enable
 for_window [class="Mousepad"]                       floating enable
-for_window [class="Gloobus-preview"]                floating enable
+for_window [class="Nvidia-settings"]                floating enable
+for_window [class="jetbrains-idea"]                 floating enable
+for_window [class="jetbrains-clion"]                floating enable
+for_window [class="jetbrains-studio"]               floating enable
+for_window [class="jetbrains-goland"]               floating enable
+for_window [class="jetbrains-pycharm"]              floating enable
+for_window [class="Xfce4-taskmanager"]              floating enable
+for_window [class="flameshot"]                      floating enable
+for_window [class="Pavucontrol"]                    floating enable
+for_window [class="Xarchiver"]                      floating enable
+for_window [class="Blueman-manager"]                floating enable
+for_window [class="TelegramDesktop"]                floating enable
 
 # assign program to workspace
-assign [class="terminal"]                       → $ws1
-assign [class="Thunar"]                         → $ws2
-assign [class="Chromium"]                       → $ws3
-assign [class="Firefox"]                        → $ws3
-assign [class="Transmission-gtk"]               → $ws3
-assign [class="Code"]                           → $ws4
-assign [class="Gvim"]                           → $ws4
-assign [class="Typora"]                         → $ws4
-assign [class="Gnome-font-viewer"]              → $ws5
-assign [class="keepassxc"]                      → $ws5
-assign [class="GParted"]                        → $ws5
+# assign [class=""]                             → $wsn
+assign [class="Google-chrome"]                  → $ws2
+assign [class="firefox"]                        → $ws2
+assign [class="Code"]                           → $ws3
+assign [class="jetbrains-idea"]                 → $ws3
+assign [class="jetbrains-clion"]                → $ws3
+assign [class="jetbrains-studio"]               → $ws3
+assign [class="jetbrains-goland"]               → $ws3
+assign [class="jetbrains-pycharm"]              → $ws3
+assign [class="DrRacket"]                       → $ws3
+assign [class="DBeaver"]                        → $ws3
+assign [class="Typora"]                         → $ws3
 assign [class="Grub-customizer"]                → $ws5
-assign [class="Lxappearance"]                   → $ws5
-assign [class="Lightdm-gtk-greeter-settings"]   → $ws5
-assign [class="shadowsocks-qt5"]                → $ws5
-assign [class="Midori"]                         → $ws3
+assign [class="Blueman-manager"]                → $ws5
+assign [class="Nvidia-settings"]                → $ws5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# bind actions for starting applications
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # STYLE
-# font
-font pango:Ubuntu Bold 9
 
-# class                 border  backgr. text    indicator child_border
+# font for window title
+font pango:Ubuntu Bold 11
+
+# window color
 client.focused          #5294E2 #5294E2 #FFFFFF #DDDDDD   #5294E2
 client.focused_inactive #2F343F #2F343F #86888C #292D2E   #5A5A5A
 client.unfocused        #2F343F #2F343F #86888C #292D2E   #5A5A5A
@@ -132,33 +157,59 @@ client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
 client.placeholder      #2F343F #0C0C0C #FFFFFF #2F343F   #262626
 client.background       #2F343F
 
-# gaps
+# window gaps
 smart_gaps on
 gaps inner 4
 gaps outer 2
 
-# i3bar
+# start i3bar to display a workspace bar
 bar {
-        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-        position top
-        workspace_buttons yes
-        strip_workspace_numbers yes
+    position top
+    workspace_buttons yes
+    strip_workspace_numbers yes
+    status_command i3blocks
 
-        colors {
-        background  #2F343F
-        statusline  #DDDDDD
-        separator   #666666
-        # class             border  backgr. text
-        focused_workspace   #5294E2 #5294E2 #FFFFFF
-        active_workspace    #2F343F #2F343F #FFFFFF
-        inactive_workspace  #2F343F #2F343F #86888C
-        urgent_workspace    #D64E4E #D64E4E #FFFFFF
-        }
-
+    colors {
+    background  #2F343F
+    statusline  #DDDDDD
+    separator   #666666
+    # class             border  backgr. text
+    focused_workspace   #5294E2 #5294E2 #FFFFFF
+    active_workspace    #2F343F #2F343F #FFFFFF
+    inactive_workspace  #2F343F #2F343F #86888C
+    urgent_workspace    #D64E4E #D64E4E #FFFFFF
+    }
 }
 
+# CUSTOM ACTIONS
 
-# CUSTOM
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
 # logout session
 set $Locker i3lock && sleep 1
 set $mode_system :Lock (l) | :Logout (e) | :Reboot (r) | :Shutdown (q)
@@ -166,7 +217,7 @@ mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -174,33 +225,4 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
-
-# resize windows
-mode "resize" {
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# screenshot
-set $screenshot :Scrot | Screen (Print) | Upload (shift)
-mode "$screenshot" {
-    bindsym Print exec --no-startup-id ~/.local/share/scripts/scrots -a, mode "default"
-
-    bindsym Shift+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots && ~/Documents/Scripts/Shell/scrot-upload $n', mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+Print mode "$screenshot"
-
+bindsym $mod+Delete mode "$mode_system"

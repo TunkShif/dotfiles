@@ -1,15 +1,9 @@
-export ZSH=$HOME/.oh-my-zsh                                   
-export EDITOR="nvim"
-export PATH=$PATH:$HOME/.local/share/scripts
+export ZSH="/home/tunkshif/.oh-my-zsh"
 
-ZSH_THEME="lambda-mod"
+EDITOR=nvim
+ZSH_THEME="cdimascio-lambda"
 
-plugins=(
-  git
-  pip
-  thefuck
-  utils
-)
+plugins=(git pip autojump custom-commands)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
