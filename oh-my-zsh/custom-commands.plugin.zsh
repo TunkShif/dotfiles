@@ -47,3 +47,7 @@ alias reload-zsh-config="source ~/.zshrc"
 function mkd() {
     mkdir -p "$@" && cd "$@"
 }
+
+function cdl() {
+    cd "$@" && ls
+}
