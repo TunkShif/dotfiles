@@ -20,7 +20,7 @@ call plug#end()
 " --------
 " settings
 " --------
-colorscheme base16-tomorrow-night-eighties
+colorscheme base16-material-darker
 
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1

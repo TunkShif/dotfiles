@@ -99,6 +99,7 @@ for_window [class="Pavucontrol"]                    floating enable
 for_window [class="Xarchiver"]                      floating enable
 for_window [class="Blueman-manager"]                floating enable
 for_window [class="TelegramDesktop"]                floating enable
+for_window [class="netease-cloud-music"]            floating enable
 
 # assign program to workspace
 # assign [class=""]                             → $wsn

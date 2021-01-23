@@ -1,8 +1,8 @@
 " file
-noremap <Leader>q  :q<CR>
-noremap <Leader>Q  :q!<CR>
-noremap <Leader>w  :w<CR>
-noremap <Leader>wq :wq<CR>
+noremap <Leader>fq  :q<CR>
+noremap <Leader>fQ  :q!<CR>
+noremap <Leader>fs  :w<CR>
+noremap <Leader>fsq :wq<CR>
 
 noremap <Leader>x  dd<CR>
 
