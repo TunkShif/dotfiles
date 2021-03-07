@@ -24,14 +24,24 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 # move focused window via arrow key
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
 # split windows
-bindsym $mod+h split h
+bindsym $mod+b split h
 bindsym $mod+v split v
 
 # change container layout (stacked, tabbed, toggle split)
@@ -100,6 +110,7 @@ for_window [class="Xarchiver"]                      floating enable
 for_window [class="Blueman-manager"]                floating enable
 for_window [class="TelegramDesktop"]                floating enable
 for_window [class="netease-cloud-music"]            floating enable
+for_window [class="transmission-gtk"]               floating enable
 
 # assign program to workspace
 # assign [class=""]                             → $wsn
@@ -113,7 +124,8 @@ assign [class="jetbrains-goland"]               → $ws3
 assign [class="jetbrains-pycharm"]              → $ws3
 assign [class="DrRacket"]                       → $ws3
 assign [class="DBeaver"]                        → $ws3
-assign [class="Typora"]                         → $ws3
+assign [class="Typora"]                         → $ws4
+assign [class="obsidian"]                       → $ws4
 assign [class="Grub-customizer"]                → $ws5
 assign [class="Blueman-manager"]                → $ws5
 assign [class="Nvidia-settings"]                → $ws5
@@ -131,8 +143,14 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
 bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
 
+# start file manager
+bindsym $mod+Shift+e exec exo-open --launch FileManager
+
+# start web browser
+bindsym $mod+Shift+w exec exo-open --launch WebBrowser
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # screenshot
 bindsym $mod+Print exec flameshot gui
@@ -140,10 +158,6 @@ bindsym $mod+Shift+Print exec upload-img
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # STYLE
 
@@ -156,12 +170,12 @@ client.focused_inactive #2F343F #2F343F #86888C #292D2E   #5A5A5A
 client.unfocused        #2F343F #2F343F #86888C #292D2E   #5A5A5A
 client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
 client.placeholder      #2F343F #0C0C0C #FFFFFF #2F343F   #262626
-client.background       #2F343F 
+client.background       #2F343F
 
 # window gaps
 smart_gaps on
-gaps inner 4
-gaps outer 2
+gaps inner 8
+gaps outer 0
 
 # start i3bar to display a workspace bar
 bar {
@@ -169,7 +183,7 @@ bar {
     workspace_buttons yes
     strip_workspace_numbers yes
     status_command i3blocks
-    
+ 
     colors {
     background  #2F343F
     statusline  #DDDDDD
@@ -218,7 +232,7 @@ mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym q exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

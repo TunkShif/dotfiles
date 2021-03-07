@@ -1,46 +1,9 @@
-" -------
-" plugins
-" -------
-call plug#begin('~/.local/share/nvim/plugged')
-
-" appearance
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
-
-" code
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" utils
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-call plug#end()
-
-" --------
-" settings
-" --------
-colorscheme base16-material-darker
-
-let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#enabled = 1
-
-nnoremap <Leader>pi :PlugInstall<CR>
-nnoremap <Leader>pc :PlugClean<CR>
-nnoremap <Leader>pu :PlugUpdate<CR>
-
-nnoremap <C-f> :NERDTreeToggle<CR>
-
-" coc
 " TextEdit might fail if hidden is not set.
 set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

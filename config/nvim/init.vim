@@ -1,4 +1,3 @@
-" KEYBINDING
 " define leader key
 let g:mapleader = "\<Space>"
 

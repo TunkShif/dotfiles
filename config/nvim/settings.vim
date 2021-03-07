@@ -1,8 +1,11 @@
+set nocompatible
+
 " style
 set ruler
 set number
 set cursorline
 set laststatus=2
+set cmdheight=1
 set termguicolors
 
 " edit

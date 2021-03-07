@@ -10,3 +10,8 @@ keycode 171 = F9 F9 F9 F9 F9 F9 XF86Switch_VT_9
 keycode 121 = F10 F10 F10 F10 F10 F10 XF86Switch_VT_10
 keycode 122 = F11 F11 F11 F11 F11 F11 XF86Switch_VT_11
 keycode 123 = F12 F12 F12 F12 F12 F12 XF86Switch_VT_12
+
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
