@@ -1,3 +1,5 @@
 [user]
 	name = TunkShif
 	email = tunkshif@foxmail.com
+[core]
+	autocrlf = input
