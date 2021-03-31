@@ -1,3 +1,30 @@
 {
+    "suggest.completionItemKindLabels": {
+        "function": "func",
+        "method": "method",
+        "variable": "var",
+        "constant": "const",
+        "struct": "struct",
+        "class": "class",
+        "interface": "interface",
+        "text": "text",
+        "enum": "enum",
+        "enumMember": "enums",
+        "module": "module",
+        "color": "color",
+        "property": "prop",
+        "field": "field",
+        "unit": "unit",
+        "file": "file",
+        "value": "val",
+        "event": "event",
+        "folder": "folder",
+        "keyword": "keyword",
+        "snippet": "snip",
+        "operator": "operator",
+        "reference": "ref",
+        "typeParameter": "param",
+        "default": "default"
+    },
     "rust-analyzer.server.path": "rust-analyzer"
 }

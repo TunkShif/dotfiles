@@ -12,7 +12,7 @@ set termguicolors
 set autoindent
 set smarttab
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set relativenumber
 set nowrap
 

@@ -14,9 +14,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'justinmk/vim-sneak'
-Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
 
 " code
@@ -25,6 +28,8 @@ Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" always load this plugin as the last one
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " --------
@@ -37,4 +42,5 @@ runtime conf/nerdtree.vim
 runtime conf/vim-sneak.vim
 runtime conf/clever-f.vim
 runtime conf/coc.vim
+runtime conf/vim-clap.vim
 runtime conf/vim-markdown.vim

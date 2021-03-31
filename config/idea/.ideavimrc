@@ -1,5 +1,14 @@
-""" Map leader to space
+""" Leader key
 let mapleader=" "
+
+""" Common Settings
+set showmode
+set scrolloff=3
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set incsearch
 
 """ Plugins
 set surround
@@ -10,33 +19,50 @@ set easymotion
 set textobj-entire
 set ReplaceWithRegister
 
-""" Plugin settings -------------------------
+""" Plugin Settings
 let g:argtextobj_pairs="[:],(:),<:>"
+nnoremap s :action AceAction<CR>
 
-""" Common settings -------------------------
-set showmode
-set so=5
-set incsearch
-set nu
-
-""" Idea specific settings ------------------
+""" Idea Specific Settings
 set ideajoin
-set ideastatusicon=gray
 set idearefactormode=keep
 
-""" Mappings --------------------------------
-map <leader>d <Action>(Debug)
-map <leader>r <Action>(RenameElement)
-map <leader>c <Action>(Stop)
-map <leader>z <Action>(ToggleDistractionFreeMode)
+""" Mappings
+" copy and paste
+vnoremap <Leader>y "+y
+nnoremap <leader>y "+y
 
-map <leader>s <Action>(SelectInProjectView)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
 
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>o <Action>(FileStructurePopup)
+" file
+nnoremap <Leader>fs :action Find<CR>
+nnoremap <Leader>ff :action GotoFile<CR>
+nnoremap <Leader>fq :q<CR>
+nnoremap <Leader>fw :w<CR>
 
-map s :action AceAction<CR>
-map S :action AceTargetAction<CR>
-map <S-s> :action AceLineAction<CR>
+" goto
+nnoremap <Leader>gd :action GotoDefinition<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>gf :action FileStructurePopup<CR>
+nnoremap <leader>gh :action Back<CR>
+nnoremap <leader>gl :action Forward<CR>
+
+" code
+nnoremap <Leader>cr :action RenameElement<CR>
+nnoremap <Leader>cf :action ReformatCode<CR>
+" TODO: code collapse and expand
+
+" debug and run
+nnoremap <leader>dc :action ChooseRunConfiguration<CR>
+nnoremap <Leader>dr :action Run<CR>
+nnoremap <Leader>dR :action RunClass<CR>
+nnoremap <Leader>dd :action Debug<CR>
+nnoremap <Leader>dD :action DebugClass<CR>
+nnoremap <Leader>db :action ToggleLineBreakpoint<CR>
+
+" tab switching
+nnoremap [b gt
+nnoremap ]b gT

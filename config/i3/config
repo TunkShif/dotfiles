@@ -5,7 +5,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 exec --no-startup-id parcellite
 exec --no-startup-id ~/.fehbg
 
@@ -111,6 +111,7 @@ for_window [class="Blueman-manager"]                floating enable
 for_window [class="TelegramDesktop"]                floating enable
 for_window [class="netease-cloud-music"]            floating enable
 for_window [class="transmission-gtk"]               floating enable
+for_window [class="fcitx5-config-qt"]               floating enable
 
 # assign program to workspace
 # assign [class=""]                             → $wsn
@@ -162,7 +163,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # STYLE
 
 # font for window title
-font pango:Ubuntu Bold 11
+font pango:Ubuntu, Font Awesome 5 Free Bold 11
 
 # window color
 client.focused          #5294E2 #5294E2 #FFFFFF #DDDDDD   #5294E2
@@ -183,7 +184,7 @@ bar {
     workspace_buttons yes
     strip_workspace_numbers yes
     status_command i3blocks
- 
+
     colors {
     background  #2F343F
     statusline  #DDDDDD
