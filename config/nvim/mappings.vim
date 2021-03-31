@@ -21,3 +21,6 @@ nnoremap <silent> ]B :blast<CR>
 
 " neovim terminal
 tnoremap <Esc> <C-\><C-n>
+
+" disable search highligh
+nnoremap <Leader><Esc> :silent! nohls<cr>

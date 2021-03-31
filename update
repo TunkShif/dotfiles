@@ -1,0 +1,23 @@
+#/bin/bash
+
+function update_config() {
+  cp ~/.config/alacritty/alacritty.yml ./config/alacritty/
+  cp ~/.aria2/* ./config/aria2/
+  cp ~/.config/dunst/dunstrc ./config/dunst/
+  cp ~/.gitconfig ~/.config/git/
+  cp ~/.config/i3/config ./config/i3
+  cp ~/.ideavimrc ./config/idea/
+  cp -r ~/.config/nvim/* ./config/nvim/
+}
+
+function git_upload() {
+  git add .
+  git commit -m "Updated $(date '+%Y-%m-%d %H:%M:%S')"
+  git push origin master
+}
+
+update_config
+
+git status
+
+git_upload
