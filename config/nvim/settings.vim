@@ -1,4 +1,7 @@
-set nocompatible
+" set nocompatible
+
+" gui specific settings
+" set guifont=FiraCode\ Nerd\ Font\ Mono:h14
 
 " style
 set ruler

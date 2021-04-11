@@ -3,3 +3,5 @@
 	email = tunkshif@foxmail.com
 [core]
 	autocrlf = input
+[http]
+	proxy = http://localhost:7890

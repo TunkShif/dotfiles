@@ -123,6 +123,7 @@ assign [class="jetbrains-clion"]                → $ws3
 assign [class="jetbrains-studio"]               → $ws3
 assign [class="jetbrains-goland"]               → $ws3
 assign [class="jetbrains-pycharm"]              → $ws3
+assign [class="goneovim"]                       → $ws3
 assign [class="DrRacket"]                       → $ws3
 assign [class="DBeaver"]                        → $ws3
 assign [class="Typora"]                         → $ws4

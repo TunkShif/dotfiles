@@ -1,2 +1,3 @@
-" disable conceal
-let g:indentLine_setConceal = 0
+" excluded file types
+let g:indentLine_fileTypeExclude = ['text', 'json']
+let g:indentLine_concealcursor = 'n'
