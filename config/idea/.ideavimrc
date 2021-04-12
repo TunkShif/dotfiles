@@ -64,5 +64,5 @@ nnoremap <Leader>dD :action DebugClass<CR>
 nnoremap <Leader>db :action ToggleLineBreakpoint<CR>
 
 " tab switching
-nnoremap [b gt
-nnoremap ]b gT
+nnoremap [b gT
+nnoremap ]b gt
