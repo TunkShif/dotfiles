@@ -4,4 +4,6 @@
 [core]
 	autocrlf = input
 [http]
-	proxy = http://localhost:7890
+	proxy = http://localhost:8889
+[init]
+	defaultBranch = master

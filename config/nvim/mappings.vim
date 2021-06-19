@@ -2,7 +2,7 @@
 noremap <Leader>fq  :q<CR>
 noremap <Leader>fQ  :q!<CR>
 noremap <Leader>fs  :w<CR>
-noremap <Leader>fsq :wq<CR>
+" noremap <Leader>fsq :wq<CR>
 
 " copy and paste
 vnoremap <Leader>y "+y
@@ -23,4 +23,4 @@ nnoremap <silent> ]B :blast<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " disable search highligh
-nnoremap <Leader><Esc> :silent! nohls<cr>
+nnoremap <Leader><Esc> :silent! nohls<CR>

@@ -44,7 +44,7 @@ nnoremap <Leader>fq :q<CR>
 nnoremap <Leader>fw :w<CR>
 
 " goto
-nnoremap <Leader>gd :action GotoDefinition<CR>
+nnoremap <Leader>gd :action GotoDeclaration<CR>
 nnoremap <Leader>gi :action GotoImplementation<CR>
 nnoremap <Leader>gf :action FileStructurePopup<CR>
 nnoremap <leader>gh :action Back<CR>
@@ -56,12 +56,12 @@ nnoremap <Leader>cf :action ReformatCode<CR>
 " TODO: code collapse and expand
 
 " debug and run
-nnoremap <leader>dc :action ChooseRunConfiguration<CR>
-nnoremap <Leader>dr :action Run<CR>
-nnoremap <Leader>dR :action RunClass<CR>
-nnoremap <Leader>dd :action Debug<CR>
-nnoremap <Leader>dD :action DebugClass<CR>
-nnoremap <Leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>rc :action ChooseRunConfiguration<CR>
+nnoremap <Leader>rr :action Run<CR>
+nnoremap <Leader>rR :action RunClass<CR>
+nnoremap <Leader>rd :action Debug<CR>
+nnoremap <Leader>rD :action DebugClass<CR>
+nnoremap <Leader>rb :action ToggleLineBreakpoint<CR>
 
 " tab switching
 nnoremap [b gT

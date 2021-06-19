@@ -18,6 +18,7 @@ set expandtab
 set shiftwidth=2
 set relativenumber
 set nowrap
+set nofoldenable
 
 " search
 set ignorecase
