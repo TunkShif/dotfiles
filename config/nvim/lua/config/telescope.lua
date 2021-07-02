@@ -1,3 +1,4 @@
+-- use mapping provided by dashboard instead
 local cmd = vim.cmd
 
 cmd [[

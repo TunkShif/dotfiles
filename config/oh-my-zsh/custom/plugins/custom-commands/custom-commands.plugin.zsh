@@ -36,12 +36,13 @@ alias paq="sudo pacman -Q"
 alias yas="yay -S"
 alias yass="yay -Ss"
 
-alias set-proxy="export ALL_PROXY=http://127.0.0.1:7890"
+alias set-proxy="export ALL_PROXY=http://127.0.0.1:8889"
 alias unset-proxy="unset ALL_PROXY"
 
 # quick edit
 alias edit-zshrc="$EDITOR ~/.zshrc"
 alias edit-i3-config="$EDITOR ~/.config/i3/config"
+alias edit-nvimrc="$EDITOR ~/.config/nvim/"
 alias reload-zsh-config="source ~/.zshrc"
 
 function mkd() {

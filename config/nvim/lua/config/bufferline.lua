@@ -5,6 +5,7 @@ require('bufferline').setup{
     numbers = 'none',
     diagnostics = 'nvim_lsp',
     offsets = {{ filetype = 'NvimTree', text = 'File Explorer', text_align = 'left' }},
+    show_close_icon = false
   }
 }
 

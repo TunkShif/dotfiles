@@ -3,7 +3,7 @@ local cmd = vim.cmd
 -- file
 cmd 'noremap <Leader>fq  :q<CR>'
 cmd 'noremap <Leader>fQ  :q!<CR>'
-cmd 'noremap <Leader>fs  :w<CR>'
+cmd 'noremap <Leader>fw  :w<CR>'
 -- noremap <Leader>fsq :wq<CR>
 
 -- copy and paste

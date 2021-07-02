@@ -37,4 +37,8 @@ cmd [[
 
   " encode
   set encoding=utf-8
+
+  " log
+  set verbosefile=~/.cache/nvim/nvim.log
+  "set verbose=15
 ]]

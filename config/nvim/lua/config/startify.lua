@@ -1,18 +1,19 @@
 local cmd = vim.cmd
 
 local ascii_art_header = {
-[[    _   __         _    ___]],
-[[   / | / /__  ____| |  / (_)___ ___]],
-[[  /  |/ / _ \/ __ \ | / / / __ `__ \]],
-[[ / /|  /  __/ /_/ / |/ / / / / / / /]],
-[[/_/ |_/\___/\____/|___/_/_/ /_/ /_/]]
+  [[ ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗]],
+  [[ ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║]],
+  [[ ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║]],
+  [[ ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
+  [[ ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
+  [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]]
 }
 
 vim.g.startify_custom_header = vim.fn['startify#pad'](ascii_art_header)
 
 vim.g.startify_lists = {
-  { type = 'sessions', header = { '  Sessions' } },
-  { type = 'files', header = { '  Recent' } }
+  { type = 'sessions', header = { '  Sessions' } },
+  { type = 'files', header = { '  Recent' } }
 }
 
 -- auto disable indent line in startify

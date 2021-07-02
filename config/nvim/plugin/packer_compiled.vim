@@ -72,13 +72,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["dashboard-nvim"] = {
+  ["formatter.nvim"] = {
     loaded = true,
-    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+  },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -87,6 +99,10 @@ _G.packer_plugins = {
   ["nvim-bufferline.lua"] = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     loaded = true,
@@ -112,9 +128,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
-  ["onedark.vim"] = {
+  ["one-nvim"] = {
     loaded = true,
-    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/onedark.vim"
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/one-nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -148,6 +164,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/vim-sneak"
   },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/vim-surround"
@@ -159,6 +179,10 @@ _G.packer_plugins = {
   ["vim-vsnip-integ"] = {
     loaded = true,
     path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/tunkshif/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
