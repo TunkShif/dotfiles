@@ -1,0 +1,159 @@
+[colors]
+white = #FFFFFF
+black = #1E2127
+red = #E06C75
+green = #98C379
+yellow = #E5C07B
+orange = #D19A66
+blue = #61AFEF
+purple = #C67BDD
+cyan = #56B5C2
+gray = #ABB2BF
+
+background = #282C34
+background-alt = #242B38
+
+[bar/onedark]
+enable-ipc=true
+
+height = 26
+width = 100%
+background = ${colors.background}
+foreground = ${colors.white}
+bottom = false
+
+line-size = 2
+padding = 1
+border-size = 5
+border-color = ${colors.background}
+
+font-0 = Roboto:size=12;3
+font-1 = Font Awesome 6 Free Solid:size=10;3
+
+modules-left = bspwm
+modules-center = time 
+modules-right = network memory pulseaudio battery
+
+scroll-up = #bspwm.prev
+scroll-down = #bspwm.next
+
+wm-restack = bspwm
+override-redirect = false
+
+[module/bspwm]
+type = internal/bspwm
+index-sort = true
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+format = <label-state>
+format-foreground = ${colors.white}
+format-background = ${colors.background-alt}
+
+label-monitor = %name%
+label-focused = %name%
+label-focused-padding = 2
+label-focused-foreground = ${colors.blue}
+
+label-occupied = %name%
+label-occupied-padding = 2
+
+label-empty = %name%
+label-empty-padding = 2
+
+[module/network]
+type = internal/network
+interface = wlp4s0
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = "睊 "
+format-disconnected-prefix-font = 2
+format-disconnected-prefix-foreground = ${color.red}
+
+format-connected-padding = 1
+format-connected-margin = 1
+format-disconnected-padding = 1
+format-disconnected-margin = 1
+
+label-connected = "  %downspeed%"
+label-disconnected = Disconnected
+
+[module/battery]
+type = internal/battery
+format-charging-padding = 1
+format-charging-margin = 1
+format-full-padding = 1
+format-full-margin = 1
+format-discharging-padding = 1
+format-discharging-margin = 1
+format-low-padding = 1
+format-low-margin = 1
+
+poll-interval = 5
+
+battery = BAT0
+adapter = ADP0
+
+low-at = 10
+full-at = 99
+
+label-charging =   %percentage%%
+label-discharging =   %percentage%%
+label-full =   %percentage%%
+label-low =   %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-padding = 1
+format-margin = 1
+format-prefix = "  "
+format-foreground = ${colors.white}
+label = %percentage_used%%
+
+[module/time]
+type = internal/date
+interval = 10
+
+time = "%H:%M"
+date = "%b %d"
+
+label = %date%, %time%
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-foreground = ${colors.white}
+format-volume-background = ${colors.background}
+format-volume-padding = 1
+format-volume-margin = 1
+use-ui-max = false
+interval = 5
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+label-volume = %percentage:3:3%%
+label-muted =   MUTED
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.red}
+label-muted-padding = 1
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

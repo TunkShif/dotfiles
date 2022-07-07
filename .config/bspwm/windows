@@ -1,0 +1,37 @@
+#!/bin/sh
+
+bspc rule -a Lxappearance desktop='^5' state=floating
+bspc rule -a qv2ray desktop='^5' state=floating
+bspc rule -a Google-chrome desktop='^2'
+bspc rule -a Lightdm-gtk-greeter-settings desktop='^5'  state=floating
+bspc rule -a feh state=floating
+bspc rule -a Anki state=floating
+bspc rule -a Nvidia-settings state=floating
+bspc rule -a Code desktop='^3'
+bspc rule -a goneovim desktop='^3'
+bspc rule -a jetbrains-idea desktop='^3' state=floating
+bspc rule -a jetbrains-idea-ce desktop='^3' state=floating
+bspc rule -a jetbrains-clion desktop='^3' state=floating
+bspc rule -a jetbrains-studio desktop='^3' state=floating
+bspc rule -a jetbrains-goland desktop='^3' state=floating
+bspc rule -a jetbrains-pycharm desktop='^3' state=floating
+bspc rule -a DBeaver desktop='^3' state=floating
+bspc rule -a Xfce4-taskmanager state=floating
+bspc rule -a flameshot state=floating
+bspc rule -a Logseq desktop='^4'
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Xarchiver state=floating
+bspc rule -a Blueman-manager desktop='^5'  state=floating
+bspc rule -a TelegramDesktop state=floating
+bspc rule -a KotatogramDesktop state=floating
+bspc rule -a netease-cloud-music state=floating
+bspc rule -a transmission-gtk state=floating
+bspc rule -a fcitx5-config-qt state=floating
+bspc rule -a multimc state=floating
+bspc rule -a zoom state=floating
+bspc rule -a 'VirtualBox Manager' desktop='^6' state=floating
+bspc rule -a 'VirtualBox Machine' dekstop='^6' state=floating
+bspc rule -a VirtualBoxVM desktop='^6' state=floating
+bspc rule -a 'Gimp-2.10' desktop='^6' state=floating follow=on
+bspc rule -a 'Inkscape' desktop='^6' follow=on
+

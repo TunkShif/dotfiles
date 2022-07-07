@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+nm-applet &
+# blueman-applet &
+# mate-power-manager &
+picom &
+fcitx5 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+libinput-gestures-setup start &
+sh ~/.config/polybar/launch.sh
+# parcellite &
+xmodmap ~/.Xmodmap
+~/.fehbg
