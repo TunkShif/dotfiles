@@ -1,0 +1,51 @@
+configuration {
+  modi: "powermenu:rofi-powermenu";
+  font: "RobotoMono Nerd Font 14";
+}
+
+@import "theme.rasi"
+
+* {
+  transparency: "real";
+  text-color: @color-fg;
+  background-color: @color-bg;
+}
+
+window {
+  width: 25%;
+  height: 22%;
+  border: 2px;
+  border-color: @color-gray;
+  padding: 8px 12px;
+  border-radius: @rounded-md;
+}
+
+inputbar {
+  margin: 8px 0;
+}
+
+prompt {
+  text-color: @color-black;
+  padding: 4px 8px;
+  border-radius: @rounded-sm;
+  background-color: @color-red;
+}
+
+entry {
+  padding: 4px;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: @rounded-sm;
+}
+
+element selected {
+  background-color: @color-gray;
+}
+
+element-text selected {
+  background-color: @color-gray;
+}
+
+// vi: ft=css

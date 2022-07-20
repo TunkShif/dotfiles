@@ -1,0 +1,19 @@
+#!/usr/bin/env fish
+
+set poweroff "  Poweroff"
+set reboot "  Reboot"
+set logout "  Logout"
+set lock "  Lock"
+
+switch $argv
+case $poweroff
+    poweroff
+case $reboot
+    reboot
+case $logout
+    bspc quit
+case $lock
+    betterlockscreen --lock dim > /dev/null 2>&1 &; exit 0
+case '*'
+    echo -e (string join '\n' $poweroff $reboot $logout $lock)
+end

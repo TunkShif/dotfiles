@@ -2,9 +2,8 @@
 
 My Linux Dotfiles for:
 
-- i3-wm-gaps
+- bspwm
+- i3-gaps
+- rofi
+- polybar
 - alacritty
-- neovim
-- aria2
-- oh-my-zsh
-

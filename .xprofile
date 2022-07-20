@@ -16,7 +16,7 @@ export PATH="$PATH:$LOCAL_BIN_PATH:$MIX_ESCRIPT_PATH:$LUA_ROCKS_PATH:$OPAM_BIN_P
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Fixing JetBrains IDE blank screen issues on Bspwm
-# export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # OCaml opam settings
 # Prefix of the current opam switch

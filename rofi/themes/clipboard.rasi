@@ -1,0 +1,57 @@
+configuration {
+  modi: "clip:greenclip print";
+  run-command: "{cmd}";
+}
+
+@import "theme.rasi"
+
+* {
+  transparency: "real";
+  text-color: @color-fg;
+  background-color: @color-bg;
+}
+
+window {
+  width: 25%;
+  height: 45%;
+  border: 2px;
+  border-color: @color-gray;
+  padding: 8px 12px;
+  border-radius: @rounded-md;
+}
+
+inputbar {
+  margin: 8px 0;
+}
+
+prompt {
+  font: "RobotoMono Nerd Font 14";
+  text-color: @color-black;
+  padding: 4px 8px;
+  border-radius: @rounded-sm;
+  background-color: @color-blue;
+}
+
+entry {
+  font: "RobotoMono Nerd Font 14";
+  padding: 4px;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: @rounded-sm;
+}
+
+element-text {
+  font: "Noto Sans CJK SC 12";
+}
+
+element selected {
+  background-color: @color-gray;
+}
+
+element-text selected {
+  background-color: @color-gray;
+}
+
+// vi: ft=css

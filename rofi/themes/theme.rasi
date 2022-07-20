@@ -1,0 +1,19 @@
+* {
+  color-fg: #E2E8F0;
+  color-bg: #242B38;
+  color-black: #282C34;
+  color-blue: #61AFEF;
+  color-yellow: #E5C07B;
+  color-red: #E06C75;
+  color-white: #AAB2BF;
+  color-green: #98C379;
+  color-gray: #3E4452;
+  color-lightgray: #5C6370;
+  rounded-sm: 2px;
+  rounded-md: 6px;
+  rounded-lg: 8px;
+  rounded-xl: 12px;
+  rounded-full: 9999px;
+}
+
+// vi: ft=css

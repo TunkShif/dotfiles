@@ -1,0 +1,70 @@
+configuration {
+  modi: "drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-drun: "app";
+  font: "RobotoMono Nerd Font 14";
+}
+
+@import "theme.rasi"
+
+* {
+  transparency: "real";
+  text-color: @color-fg;
+  background-color: @color-bg;
+}
+
+window {
+  width: 30%;
+  height: 42%;
+  border: 2px;
+  border-color: @color-gray;
+  padding: 8px 12px;
+  border-radius: @rounded-md;
+}
+
+inputbar {
+  margin: 8px 0;
+}
+
+prompt {
+  text-color: @color-black;
+  padding: 4px 8px;
+  border-radius: @rounded-sm;
+  background-color: @color-green;
+}
+
+entry {
+  padding: 4px;
+}
+
+listview {
+  columns: 2;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: @rounded-sm;
+}
+
+element selected {
+  background-color: @color-gray;
+}
+
+element-icon {
+  margin: 0 8px 0 0;
+}
+
+element-text {
+  font: "Roboto 14";
+}
+
+element-icon selected {
+  background-color: @color-gray;
+}
+
+element-text selected {
+  background-color: @color-gray;
+}
+
+// vi: ft=css
