@@ -1,7 +1,6 @@
 #!/bin/sh
 
 bspc rule -a Lxappearance desktop='^5' state=floating
-bspc rule -a qv2ray desktop='^5' state=floating
 bspc rule -a Google-chrome desktop='^2'
 bspc rule -a Lightdm-gtk-greeter-settings desktop='^5'  state=floating
 bspc rule -a feh state=floating
@@ -28,10 +27,10 @@ bspc rule -a netease-cloud-music state=floating
 bspc rule -a transmission-gtk state=floating
 bspc rule -a fcitx5-config-qt state=floating
 bspc rule -a multimc state=floating
+bspc rule -a Thunar state=floating
 bspc rule -a zoom state=floating
 bspc rule -a 'VirtualBox Manager' desktop='^5' state=floating
 bspc rule -a 'VirtualBox Machine' dekstop='^5' state=floating
 bspc rule -a VirtualBoxVM desktop='^5' state=floating
 bspc rule -a 'Gimp-2.10' desktop='^5' state=floating follow=on
 bspc rule -a 'Inkscape' desktop='^5' follow=on
-

@@ -1,6 +1,6 @@
 [global]
     monitor = 0
-    width = 240
+    width = 280
     height = 300
     origin = top-right
     offset = 10x50
@@ -8,7 +8,7 @@
     frame_width = 2
     frame_color = "#3E4452"
     corner_radius = 6
-    font = Roboto 14
+    font = Roboto 12
     icon_theme = Papirus
     icon_position = left
     min_icon_size = 32

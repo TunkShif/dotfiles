@@ -16,7 +16,7 @@ background-alt = #242B38
 [bar/onedark]
 enable-ipc=true
 
-height = 26
+height = 28
 width = 100%
 background = ${colors.background}
 foreground = ${colors.white}
@@ -27,8 +27,8 @@ padding = 1
 border-size = 5
 border-color = ${colors.background}
 
-font-0 = Roboto:size=12;3
-font-1 = Font Awesome 6 Free Solid:size=10;3
+font-0 = Roboto:size=13;3
+font-1 = Font Awesome 6 Free Solid:size=11;3
 
 modules-left = bspwm
 modules-center = time 

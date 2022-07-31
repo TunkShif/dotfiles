@@ -18,6 +18,10 @@ super + q
 super + v
   rofi -show clip -theme clipboard
 
+# bspad
+super + w
+  rofi -show bspad -theme bspad
+
 # make sxhkd reload its configuration files:
 super + BackSpace
 	pkill -USR1 -x sxhkd
@@ -61,6 +65,10 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
+# send window to bspad
+super + z
+  bspc node -g hidden
 
 #
 # focus/swap

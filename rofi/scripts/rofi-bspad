@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+windows = `bspc query -N -n .leaf.hidden`.split.map do |w|
+  regex = /"([^,]+)"/
+  class_name = `xprop -id #{w} WM_CLASS`.match(regex).captures.first
+  window_title = `xprop -id #{w} WM_NAME`.match(regex).captures.first
+  {
+    id: w,
+    name: "[#{class_name}] #{window_title}"
+  }
+end
+
+case ARGV
+when []
+  windows.each_with_index do |w, i|
+    print "#{w[:name]}\0info\x1f#{i}\n"
+  end
+else
+  selected = ENV['ROFI_INFO'].to_i
+  window = windows[selected][:id]
+  `bspc node #{window} -g hidden -f`
+end
