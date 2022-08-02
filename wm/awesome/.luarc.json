@@ -1,0 +1,15 @@
+{
+  "diagnostics.globals": [
+    "awesome",
+    "client",
+    "mouse",
+    "mousegrabber",
+    "root",
+    "screen",
+    "tag"
+  ],
+  "workspace.library": [
+    "/usr/share/awesome/lib/",
+    "~/.luarocks/share/lua/5.4/"
+  ]
+}
