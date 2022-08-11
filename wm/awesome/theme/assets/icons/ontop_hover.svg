@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28"
+   height="28"
+   viewBox="0 0 7.4083332 7.4083333"
+   version="1.1"
+   id="svg475"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="ontop_hover.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview477"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="19.02887"
+     inkscape:cx="14.819587"
+     inkscape:cy="13.899932"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="0,7.4083332"
+       orientation="0,32"
+       id="guide479"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.4666665,7.4083332"
+       orientation="32,0"
+       id="guide481"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.4666665,-1.0583333"
+       orientation="0,-32"
+       id="guide483"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,-1.0583333"
+       orientation="-32,0"
+       id="guide485"
+       inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid487"
+       empspacing="4"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs472" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.5;fill:#454c5c;fill-opacity:1;stroke-width:0.499647"
+       id="rect541-3"
+       width="2.1166666"
+       height="2.1166666"
+       x="4.2333331"
+       y="1.0583333" />
+    <rect
+       style="opacity:0.5;fill:#454c5c;fill-opacity:1;stroke-width:0.499647"
+       id="rect541-3-6"
+       width="2.1166666"
+       height="2.1166666"
+       x="4.2333331"
+       y="4.2333331" />
+  </g>
+</svg>

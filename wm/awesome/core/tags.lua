@@ -2,11 +2,16 @@ local awful = require("awful")
 
 local enabled_layotus = require("config").layouts
 
+local icon = ""
+
 tag.connect_signal("request::default_layouts", function()
   awful.layout.append_default_layouts(enabled_layotus)
 end)
 
 screen.connect_signal("request::desktop_decoration", function(s)
-  -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+  awful.tag({ icon, icon, icon, icon }, s, awful.layout.suit.tile)
+  awful.tag.add(icon, {
+    layout = awful.layout.suit.floating,
+    screen = s
+  })
 end)
