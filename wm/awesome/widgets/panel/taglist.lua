@@ -1,6 +1,6 @@
 local awful = require("awful")
 local wibox = require("wibox")
-local gears = require("gears")
+local utils = require("utils")
 local beautiful = require("beautiful")
 
 local dpi = require("utils").theme.dpi
@@ -39,9 +39,7 @@ function M.create(s)
     widget = wibox.container.background,
     bg = beautiful.color_gray,
     forced_height = dpi(30),
-    shape = function(cr, w, h)
-      gears.shape.rounded_rect(cr, w, h, beautiful.radius_sm)
-    end,
+    shape = utils.theme.rounded_shape,
     taglist
   }
 end

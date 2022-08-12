@@ -4,7 +4,6 @@ local bling = require("bling")
 
 local mod = require("config").modkey
 local apps = require("config").apps
-local menus = require("widgets.menus")
 
 bling.module.flash_focus.enable()
 
@@ -322,7 +321,6 @@ client.connect_signal("request::default_mousebindings", function()
 end)
 
 awful.mouse.append_global_mousebindings({
-  awful.button({}, 3, function() menus.main_menu:toggle() end),
   awful.button({}, 4, awful.tag.viewprev),
   awful.button({}, 5, awful.tag.viewnext),
 })

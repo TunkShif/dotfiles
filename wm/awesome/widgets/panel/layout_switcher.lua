@@ -1,36 +1,22 @@
 local awful = require("awful")
-local wibox = require("wibox")
-local gears = require("gears")
 local beautiful = require("beautiful")
 
-local dpi = require("utils").theme.dpi
+local button = require("widgets.common.button")
 
 local layout_icons = {
   tile = "",
   floating = ""
 }
 
-local layout_switcher = wibox.widget {
-  widget = wibox.widget.background,
-  forced_width = dpi(30),
-  forced_height = dpi(30),
+local layout_switcher = button.create {
+  icon = "",
   bg = beautiful.color_gray,
   fg = beautiful.color_white,
-  shape = function(cr, w, h)
-    gears.shape.rounded_rect(cr, w, h, beautiful.radius_sm)
-  end,
-  {
-    widget = wibox.widget.textbox,
-    text = "",
-    font = "Font Awesome 6 Free Solid 11",
-    align = "center",
-    valign = "center",
-    buttons = {
-      awful.button({}, 1, function() awful.layout.inc(1) end),
-      awful.button({}, 3, function() awful.layout.inc(-1) end),
-      awful.button({}, 4, function() awful.layout.inc(1) end),
-      awful.button({}, 5, function() awful.layout.inc(-1) end)
-    }
+  buttons = {
+    awful.button({}, 1, function() awful.layout.inc(1) end),
+    awful.button({}, 3, function() awful.layout.inc(-1) end),
+    awful.button({}, 4, function() awful.layout.inc(1) end),
+    awful.button({}, 5, function() awful.layout.inc(-1) end)
   }
 }
 

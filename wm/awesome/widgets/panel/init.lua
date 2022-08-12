@@ -7,6 +7,10 @@ local dpi = require("utils").theme.dpi
 local launcher = require("widgets.panel.launcher")
 local layout_switcher = require("widgets.panel.layout_switcher")
 local powermenu = require("widgets.panel.powermenu")
+local battery = require("widgets.panel.battery")
+local memory = require("widgets.panel.memory")
+local netspeed = require("widgets.panel.netspeed")
+local volume = require("widgets.panel.volume")
 local systray = require("widgets.panel.systray")
 local taglist = require("widgets.panel.taglist")
 local clock = wibox.widget.textclock("%H:%M | %b %d")
@@ -37,6 +41,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
       { -- Right
         layout = wibox.layout.fixed.horizontal,
         spacing = dpi(8),
+        netspeed,
+        memory,
+        volume,
+        battery,
         systray,
         powermenu,
       },

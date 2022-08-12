@@ -1,0 +1,6 @@
+[submodule "wm/awesome/lib/bling"]
+	path = wm/awesome/lib/bling
+	url = https://github.com/BlingCorp/bling.git
+[submodule "wm/awesome/lib/vicious"]
+	path = wm/awesome/lib/vicious
+	url = https://github.com/vicious-widgets/vicious

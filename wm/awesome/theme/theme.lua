@@ -1,6 +1,7 @@
 local gears = require("gears")
+local utils = require("utils")
 
-local dpi = require("utils").theme.dpi
+local dpi = utils.theme.dpi
 
 local assets_dir = gears.filesystem.get_configuration_dir() .. "theme/assets/"
 local icon_dir   = assets_dir .. "/icons/"
@@ -15,7 +16,10 @@ theme.color_fg        = "#E2E8F0"
 theme.color_bg        = "#242B38"
 theme.color_black     = "#282C34"
 theme.color_blue      = "#61AFEF"
+theme.color_cyan      = "#56B6C2"
 theme.color_yellow    = "#E5C07B"
+theme.color_orange    = "#D19A66"
+theme.color_purple    = "#C678DD"
 theme.color_red       = "#E06C75"
 theme.color_white     = "#AAB2BF"
 theme.color_green     = "#98C379"
@@ -36,9 +40,35 @@ theme.fg_normal = theme.color_fg
 theme.fg_focus  = theme.color_blue
 theme.fg_urgent = theme.color_red
 
-theme.menu_height    = dpi(40)
-theme.menu_width     = dpi(160)
-theme.menu_icon_size = dpi(32)
+-- menu and menubar
+theme.menu_submenu      = ">"
+theme.menu_font         = theme.font
+theme.menu_width        = dpi(200)
+theme.menu_height       = dpi(40)
+theme.menu_border_color = theme.border_focus
+theme.menu_border_width = theme.border_width
+theme.menu_fg_focus     = theme.color_fg
+theme.menu_bg_focus     = theme.color_gray
+theme.menu_fg_normal    = theme.color_fg
+theme.menu_bg_normal    = theme.color_bg
+
+theme.menubar_font         = theme.font
+theme.menubar_border_color = theme.border_focus
+theme.menubar_border_width = theme.border_width
+theme.menubar_fg_focus     = theme.color_fg
+theme.menubar_bg_focus     = theme.color_gray
+theme.menubar_fg_normal    = theme.color_fg
+theme.menubar_bg_normal    = theme.color_bg
+
+-- hotkeys
+theme.hotkeys_font             = "Roboto Mono Medium 12"
+theme.hotkeys_description_font = "Roboto Regular 11"
+theme.hotkeys_group_margin     = dpi(16)
+theme.hotkeys_bg               = theme.color_bg
+theme.hotkeys_fg               = theme.color_fg
+theme.hotkeys_border_width     = theme.border_width
+theme.hotkeys_border_color     = theme.border_focus
+theme.hotkeys_shape            = utils.theme.rounded_shape
 
 -- titlebar
 theme.titlebar_bg = theme.color_bg

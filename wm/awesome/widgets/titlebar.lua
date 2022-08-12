@@ -40,7 +40,7 @@ client.connect_signal("request::titlebars", function(c)
         },
         { -- Right
           widget = wibox.container.margin,
-          margins = { top = dpi(2), bottom = dpi(2), right = dpi(4) },
+          margins = { top = dpi(5), bottom = dpi(5), right = dpi(4) },
           {
             widget = awful.titlebar.widget.ontopbutton(c),
           },
