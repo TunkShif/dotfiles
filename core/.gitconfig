@@ -1,7 +1,0 @@
-[user]
-	name = TunkShif
-	email = tunkshif@foxmail.com
-[core]
-	autocrlf = input
-[init]
-	defaultBranch = main

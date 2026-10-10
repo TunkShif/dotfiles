@@ -1,5 +1,0 @@
-require("core.debug")
-require("core.tags")
-require("core.rules")
-require("core.bindings")
-require("core.notification")
